@@ -20,6 +20,7 @@ func main() {
 	})
 
 	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		log.Printf("Inside main")
 		json.NewEncoder(w).Encode(map[string]string{"Message": "Hello from server"})
 	})
 
