@@ -19,6 +19,10 @@ func main() {
 		json.NewEncoder(w).Encode(map[string]bool{"ok": true})
 	})
 
+	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		json.NewEncoder(w).Encode(map[string]string{"Message": "Hello from server"})
+	})
+
 	srv := &http.Server{
 		Handler: router,
 		Addr:    "127.0.0.1:8000",
